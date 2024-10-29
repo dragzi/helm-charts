@@ -7,7 +7,34 @@ entries:
           description: use template to generate README.md
     apiVersion: v2
     appVersion: v1.50.0
-    created: "2024-10-29T14:34:44.618559793Z"
+    created: "2024-10-29T14:58:11.447669394Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.5.1
+    description: Decluttarr is an application that manages cleaning up Radarr and
+      Sonarr torrents
+    digest: 92d872843d0fc0a40b58b64a1c73c864c5a5d56503f6fb87b60439f138195069
+    home: https://github.com/dragzi/helm-charts/tree/master/charts/decluttar
+    keywords:
+    - decluttarr
+    maintainers:
+    - email: peteradamnorman@gmail.com
+      name: pete
+    name: decluttarr
+    sources:
+    - https://github.com/ManiMatter/decluttarr
+    type: application
+    urls:
+    - https://dragzi.github.io/helm-charts/decluttarr-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
+          description: use template to generate README.md
+    apiVersion: v2
+    appVersion: v1.50.0
+    created: "2024-10-29T14:58:11.446470281Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts/
@@ -34,7 +61,7 @@ entries:
           description: use template to generate README.md
     apiVersion: v2
     appVersion: v1.50.0
-    created: "2024-10-29T14:34:44.617111845Z"
+    created: "2024-10-29T14:58:11.445194166Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts/
@@ -55,4 +82,4 @@ entries:
     urls:
     - https://dragzi.github.io/helm-charts/decluttarr-1.0.0.tgz
     version: 1.0.0
-generated: "2024-10-29T14:34:44.614637986Z"
+generated: "2024-10-29T14:58:11.443869756Z"

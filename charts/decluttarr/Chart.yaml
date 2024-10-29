@@ -2,7 +2,7 @@ apiVersion: v2
 name: decluttarr
 description: Decluttarr is an application that manages cleaning up Radarr and Sonarr torrents
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: "v1.50.0"
 keywords:
   - decluttarr
