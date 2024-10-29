@@ -1,0 +1,98 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from bjw-s's common library chart. You can check the default values/options here:
+# https://github.com/bjw-s/helm-charts/tree/main/charts/library/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: ghcr.io/manimatter/decluttarr
+  # @default -- chart.appVersion
+  tag: v1.50.0
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+# -- environment variables.
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+  SSL_VERIFICATION: False
+  OG_LEVEL: INFO
+
+  ## Features 
+  REMOVE_TIMER: 10
+  REMOVE_FAILED: True
+  REMOVE_FAILED_IMPORTS: True
+  REMOVE_METADATA_MISSING: True
+  REMOVE_MISSING_FILES: True
+  REMOVE_ORPHANS: True
+  REMOVE_SLOW: True
+  REMOVE_STALLED: True
+  REMOVE_UNMONITORED: True
+  RUN_PERIODIC_RESCANS: '
+    {
+      "SONARR": {"MISSING": true, "CUTOFF_UNMET": true, "MAX_CONCURRENT_SCANS": 3, "MIN_DAYS_BEFORE_RESCAN": 7},
+      "RADARR": {"MISSING": true, "CUTOFF_UNMET": true, "MAX_CONCURRENT_SCANS": 3, "MIN_DAYS_BEFORE_RESCAN": 7}
+    }'
+
+  # Feature Settings
+  PERMITTED_ATTEMPTS: 3
+  NO_STALLED_REMOVAL_QBIT_TAG: Don't Kill
+  MIN_DOWNLOAD_SPEED: 100     
+  FAILED_IMPORT_MESSAGE_PATTERNS: '
+    [
+      "Not a Custom Format upgrade for existing", 
+      "Not an upgrade for existing"
+    ]'
+
+  # Dont be a doughnut and put it in plaintext
+  # I highly recommend when you override you do so with a secret
+  # RADARR_KEY:
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: yoursecret
+  #       key: optional-keyinyoursecret
+
+  ## Radarr
+  # RADARR_URL: http://radarr:7878
+  # RADARR_KEY: "YOUR_KEY"
+
+  ## Sonarr
+  # SONARR_URL: http://sonarr:8989
+  # SONARR_KEY: "YOUR_KEY"
+
+  ## Lidarr
+  # LIDARR_URL: http://lidarr:8686
+  # LIDARR_KEY: "YOUR_KEY"
+
+  ## Readarr
+  # READARR_URL: http://readarr:8787
+  # READARR_KEY: "YOUR_KEY"
+
+  ## Whisparr
+  # WHISPARR_URL: http://whisparr:6969
+  # WHISPARR_KEY: "YOUR_KEY"
+
+  ## qBitorrent
+  QBITTORRENT_URL: http://qbittorrent:8080
+  # QBITTORRENT_USERNAME=Your name
+  # QBITTORRENT_PASSWORD=Your password
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service: {}
+
+ingress: {}
+
+# -- Configures the probes for the main Pod.
+# @default -- See values.yaml
+probes: {}
+
+# -- Configure persistence settings for the chart under this key.
+## Config persistence is required for the Prometheus exporter sidecar.
+# @default -- See values.yaml
+persistence:
+  config:
+    enabled: false
