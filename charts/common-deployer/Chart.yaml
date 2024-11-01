@@ -1,0 +1,22 @@
+apiVersion: v2
+name: common-deployer
+description: Quick wrap around bjw-s library
+type: application
+version: 0.0.1
+appVersion: "v3.5.1"
+keywords:
+  - decluttarr
+home: https://github.com/dragzi/helm-charts/tree/master/charts/decluttar
+sources:
+  - https://github.com/bjw-s/helm-charts/tree/main/charts/library
+maintainers:
+  - name: pete
+    email: peteradamnorman@gmail.com
+dependencies:
+  - name: common
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 3.5.1
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: use template to generate README.md

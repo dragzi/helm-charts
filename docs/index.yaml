@@ -1,5 +1,32 @@
 apiVersion: v1
 entries:
+  common-deployer:
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
+          description: use template to generate README.md
+    apiVersion: v2
+    appVersion: v3.5.1
+    created: "2024-11-01T00:47:26.871083734Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 3.5.1
+    description: Quick wrap around bjw-s library
+    digest: 128b1f6e47da72728e1c6b7435c2f8dd9d4dd607a5158496822dfe19170a54ab
+    home: https://github.com/dragzi/helm-charts/tree/master/charts/decluttar
+    keywords:
+    - decluttarr
+    maintainers:
+    - email: peteradamnorman@gmail.com
+      name: pete
+    name: common-deployer
+    sources:
+    - https://github.com/bjw-s/helm-charts/tree/main/charts/library
+    type: application
+    urls:
+    - https://dragzi.github.io/helm-charts/common-deployer-0.0.1.tgz
+    version: 0.0.1
   decluttarr:
   - annotations:
       artifacthub.io/changes: |-
@@ -7,7 +34,7 @@ entries:
           description: use template to generate README.md
     apiVersion: v2
     appVersion: v1.50.0
-    created: "2024-10-29T14:58:11.447669394Z"
+    created: "2024-11-01T00:47:26.876528029Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts/
@@ -34,7 +61,7 @@ entries:
           description: use template to generate README.md
     apiVersion: v2
     appVersion: v1.50.0
-    created: "2024-10-29T14:58:11.446470281Z"
+    created: "2024-11-01T00:47:26.874947392Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts/
@@ -61,7 +88,7 @@ entries:
           description: use template to generate README.md
     apiVersion: v2
     appVersion: v1.50.0
-    created: "2024-10-29T14:58:11.445194166Z"
+    created: "2024-11-01T00:47:26.873405983Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts/
@@ -82,4 +109,4 @@ entries:
     urls:
     - https://dragzi.github.io/helm-charts/decluttarr-1.0.0.tgz
     version: 1.0.0
-generated: "2024-10-29T14:58:11.443869756Z"
+generated: "2024-11-01T00:47:26.869531311Z"
